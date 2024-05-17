@@ -1,0 +1,22 @@
+﻿@page
+@model RazorPages.Pages.EstadisticaModel
+@{
+}
+<form method="post">
+    <input type="submit" name="name" value="Calcular " />
+</form>
+
+@if(Model.suma > 0){
+    <table border="1">
+        <tr>
+           @foreach(int num in Model.numeros)
+           {
+              <th style="border-width:1px"> @num </th>
+           }
+        </tr>
+    </table>
+    <p>Suma: @Model.suma</p>
+    <p>Promedio: @Model.media</p>
+    <p>Mediana: @Model.numeros[9] + @Model.numeros[9] / 2 = @Model.mediana</p>
+    <p>Moda: @Model.moda</p>
+}

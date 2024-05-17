@@ -1,0 +1,22 @@
+﻿@page
+@model RazorPages.Pages.ecuacionModel
+@{}
+
+<form method="post">
+
+    <p> Revisar (ax+by)<sup>n</sup> </p>
+
+    x = <input type="number" step="1" asp-for="numx" />
+    y = <input type="number" step="1" asp-for="numy" />
+    a = <input type="number" step="1" asp-for="numa" />
+    b = <input type="number" step="1" asp-for="numb" />
+    n = <input type="number" step="1" asp-for="numn" /> 
+
+    <p> <input type="submit" value="Calcular" /></p>
+
+</form>
+
+@if (Model.total != 0)
+{
+    <p>(ax+by)<sup>n</sup> = ((@Model.numa)(@Model.numx)+(@Model.numb)(@Model.numy))<sup>@Model.numn</sup> = @Model.total </p>
+}

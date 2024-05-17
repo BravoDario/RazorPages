@@ -1,0 +1,24 @@
+﻿@page
+@model RazorPages.Pages.CodificadorModel
+@{
+}
+
+
+
+<form method="post">
+    <label for="txtIn">Ingresa el texto </label>
+    <input type="text" id="txtIn" asp-for="texto"/>
+    <p>¿Qué deseas hacer? </p>
+    <input type="radio" name="codificacion" asp-for="codificacion" id="cod" value="cod" />
+    <label for="cod">Codificar</label>
+    <br />
+    <input type="radio" name="codificacion" id="dec" value="decod" />
+    <label for="dec">Decodificar</label>
+
+    <p> <input type="submit" value="Calcular" /></p>
+    @if(Model.mensaje != ""){
+        <p>el texto es: @Model.mensaje </p>
+    }
+
+</form>
+
